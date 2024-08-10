@@ -1,0 +1,34 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-menu-button slot="start"></ion-menu-button>
+		<ion-title class="heaerfont">{{title}}</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+		<ion-refresher-content></ion-refresher-content>
+	</ion-refresher>
+	<div class="container">
+		<figure>
+			<div class="offer_img">
+				<img src="assets/icon/logo.png" />
+			</div>
+			<h1 class="offerh1">Our Latest Deals</h1>
+		</figure>
+		<figure class="offerbox" *ngFor="let item of allProducts">
+			<div class="offer_img" *ngIf='item.image'>
+				 <!-- // (click)=" offerdetails(item) -->
+				 <img src="{{imgpath}}offers/{{item.image}}">
+			</div>
+			<div class="offercode">
+				<img src="assets/offeriCon.png"> {{item.offer_code}} <span *ngIf="pgtype == 'apply'"
+					(click)='appltythis(item)'>Apply</span>
+			</div>
+			<div class="offerhead">
+				{{item.heading}}
+			</div>
+			<div class="offerdescription" [innerHTML]='item.description'></div>
+		</figure>
+	</div>
+</ion-content>

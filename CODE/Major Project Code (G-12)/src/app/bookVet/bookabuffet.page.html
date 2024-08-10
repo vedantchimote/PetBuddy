@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar class="header-background-color">
+  	 <ion-back-button slot="start"></ion-back-button>
+    <ion-title class="heaerfont">Book A Vet Consultancy</ion-title>
+    <ion-buttons slot="end" (click)='viewmycart()'>
+      <ion-icon name="person-outline" class='headerrighticon'></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<div class="container">
+
+	<div class="loginmobilefieldreg">
+		<label>Name <span>*</span></label>
+		<input type="text" readonly="readonly" [(ngModel)]="data.name">
+	</div>
+	<div class="loginmobilefieldreg">
+		<label>Email <span>*</span></label>
+		<input type="email" readonly="readonly" [(ngModel)]="data.email">
+	</div>
+	<div class="loginmobilefieldreg">
+		<label>Mobile Number <span>*</span></label>
+		<input type="tel" readonly="readonly" [(ngModel)]="data.mobile">
+	</div>
+	<div class="loginmobilefieldreg">
+		<label>Number of Pet <span>*</span></label>
+		<input type="number" [(ngModel)]="data.nop">
+	</div>
+	<div class="loginmobilefieldreg">
+		<label>Booking Date <span>*</span></label>
+		<input type="date" (change)='chkbuftavl()' [(ngModel)]="data.bookdate">
+	</div>
+	<div class="loginmobilefieldreg">
+		<label>Booking Time <span>*</span></label>
+		<select [(ngModel)]="data.booktime">
+			<option value="{{tml.value}}" *ngFor="let tml of timelist">{{tml.datename}} - {{tml.value}}</option>
+		</select>
+	</div>
+
+	<div class="loginmobilefieldreg">
+		<label>What we should do ? <span>*</span></label>
+		<select [(ngModel)]="data.bookingfor">
+			<option value="Regular Check Up">Regular Check Up</option>
+			<option value="Control of production limiting">Control of production limiting</option>
+			<option value="Treat and dress wounds">Treat and dress wounds</option>
+			<option value="Vaccinate"> Vaccination </option>
+
+		</select>
+	</div>
+
+	<div class="continuebtn" (click)='checkfldempty()'>
+		Book Appointment
+	</div>
+	</div>
+</ion-content>
+

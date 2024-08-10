@@ -1,0 +1,38 @@
+.categorylists {
+	width: 100%;
+	height: auto;
+	padding: 10px 10px;
+	position: relative;
+	background: #fff;
+	margin-bottom: 7px;
+	font-size: 12px;
+	text-transform: uppercase;
+	border-radius: 5px 5px 5px 5px;
+	border: 1px solid lightgray;
+	span {
+		float: right;
+	}
+	ion-toggle {
+		padding: 0;
+	}
+}
+
+.categoryliststngs {
+	width: 100%;
+	height: auto;
+	padding: 15px 10px;
+	position: relative;
+	background: #fff;
+	margin-bottom: 7px;
+	font-size: 12px;
+	text-transform: uppercase;
+	border-radius: 5px 5px 5px 5px;
+	span {
+		position: absolute;
+		right: 10px;
+		top: 7px;
+	}
+	ion-toggle {
+		padding: 0;
+	}
+}

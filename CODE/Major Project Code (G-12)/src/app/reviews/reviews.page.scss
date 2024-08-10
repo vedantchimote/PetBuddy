@@ -1,0 +1,26 @@
+.reviewvid {
+	width: 100%;
+	height: auto;
+	padding: 10px;
+	background-color: #fff;
+	font-size: 13px;
+	margin-bottom: 20px;
+	border-radius: 5px 5px 5px 5px;
+	border: 1px solid lightgray;
+	.reviername {
+		font-size: 12px;
+		font-weight: bold;
+		ion-icon {
+			color: #ffd500;
+			margin-right: 3px;
+		}
+		.timeago {
+			float: right;
+			font-weight: normal;
+			color: #9c9c9c;
+		}
+	}
+	.reviewdesc {
+		padding: 10px 0;
+	}
+}

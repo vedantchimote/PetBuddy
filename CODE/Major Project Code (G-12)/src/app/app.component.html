@@ -1,0 +1,38 @@
+<ion-app>
+  <!-- <ion-split-pane contentId="main-content"> -->
+    <ion-menu contentId="main-content" type="overlay" class='nopaddingmemnu'>
+      <ion-content>
+
+        <div class="leftuserdtls">
+          <div *ngIf='logeduser' (click)='gomyacount()'>
+             <div class="usrnmandmemail">
+                 <strong>{{logeduser.name}}</strong><br><span>{{logeduser.email}}</span>
+            </div>
+            <div class="editprfl">
+              <ion-icon name="chevron-forward-outline"></ion-icon>
+            </div>
+          </div>
+         
+         <div *ngIf='!logeduser' (click)="openloginpanel('any')">
+            <div class="usrnmandmemail">
+              Anonymous<br><span>Login / signup</span>
+            </div>
+            <div class="editprfl">
+              <ion-icon name="chevron-forward-outline"></ion-icon>
+            </div>
+         </div>
+        </div>
+        <div class="leftcustomemenu">
+          <ul>
+            <li *ngFor="let p of appPages; let i = index" (click)="openmenu(p)" menuClose>
+                <img src="assets/icon/leftmenu/{{p.icon}}"> {{ p.title }}
+            </li>
+          </ul>
+        </div>
+        <div class="powerdby" (click)="opensite('v1')">
+          Have a Nice Day!
+        </div>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+</ion-app>
